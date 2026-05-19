@@ -1141,6 +1141,8 @@ body.light-mode .certificate-description {
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card:hover {
@@ -1167,6 +1169,39 @@ body.light-mode .certificate-description {
 
 .project-card:hover .project-image {
     transform: scale(1.08);
+}
+
+.github-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 1, 15, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.github-overlay i {
+    font-size: 3rem;
+    color: #ffffff;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
+    transform: scale(0.7);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .github-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .github-overlay i {
+    transform: scale(1);
 }
 
 .project-category {
